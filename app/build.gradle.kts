@@ -30,6 +30,16 @@ android {
         }
     }
 
+    base {
+        archivesName.set("CalcPlus")
+    }
+
+    // DISABLES GOOGLE ENCRYPTED METADATA FOR IZZYONDROID / F-DROID
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     signingConfigs {
         create("release") {
             if (keystorePropertiesFile.exists()) {
