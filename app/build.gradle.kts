@@ -31,7 +31,7 @@ android {
     }
 
     base {
-        archivesName.set("CalcPlus")
+        archivesName.set("PdfEditorPlus")
     }
 
     // DISABLES GOOGLE ENCRYPTED METADATA FOR IZZYONDROID / F-DROID
