@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary -->
+    <color name="primary">#7E98FC</color>
+    <color name="primary_dark">#5C7CFA</color>
+    <color name="primary_light">#9DB0FD</color>
+    <color name="primary_container">#1A2347</color>
+    <color name="on_primary">#0D0D1A</color>
+    <color name="on_primary_container">#9DB0FD</color>
+
+    <!-- Teal accent -->
+    <color name="accent_teal">#00D4AE</color>
+
+    <!-- Backgrounds - Dark -->
+    <color name="background">#0A0A0F</color>
+    <color name="surface">#141419</color>
+    <color name="surface_variant">#1A1A22</color>
+    <color name="on_background">#E8E9F4</color>
+    <color name="on_surface">#E8E9F4</color>
+    <color name="on_surface_secondary">#8A8DA8</color>
+    <color name="on_surface_tertiary">#5C5F7A</color>
+
+    <!-- Card -->
+    <color name="card_background">#1A1A22</color>
+    <color name="divider">#2A2A38</color>
+
+    <!-- Status tags -->
+    <color name="tag_background">#1A2347</color>
+    <color name="tag_text">#7E98FC</color>
+
+    <!-- Tool icon backgrounds (dark mode) -->
+    <color name="icon_bg_teal">#0D2E28</color>
+    <color name="icon_teal">#00D4AE</color>
+    <color name="icon_bg_blue">#1A2347</color>
+    <color name="icon_blue">#7E98FC</color>
+    <color name="icon_bg_orange">#2E1F0A</color>
+    <color name="icon_orange">#FFA040</color>
+    <color name="icon_bg_amber">#2E2300</color>
+    <color name="icon_amber">#FFD040</color>
+    <color name="icon_bg_purple">#1E0D2E</color>
+    <color name="icon_purple">#CE93D8</color>
+    <color name="icon_bg_red">#2E0A0A</color>
+    <color name="icon_red">#EF5350</color>
+    <color name="icon_bg_green">#0A2E0A</color>
+    <color name="icon_green">#66BB6A</color>
+    <color name="icon_bg_gold">#2E2800</color>
+    <color name="icon_gold">#FFD700</color>
+    <color name="icon_bg_pink">#2E0A1A</color>
+    <color name="icon_pink">#F48FB1</color>
+
+    <!-- Bottom nav -->
+    <color name="bottom_nav_background">#141419</color>
+    <color name="bottom_nav_selected">#7E98FC</color>
+    <color name="bottom_nav_unselected">#5C5F7A</color>
+    <color name="nav_card_bg">#1E222B</color>
+    <color name="nav_card_stroke">#2D333F</color>
+    <color name="nav_shadow_spot">#00000000</color>
+    <color name="nav_shadow_ambient">#00000000</color>
+
+    <!-- FAB -->
+    <color name="fab_background">#5C7CFA</color>
+    <color name="fab_foreground">#FFFFFF</color>
+
+    <!-- Online indicator -->
+    <color name="indicator_green">#00E676</color>
+
+    <!-- Switches -->
+    <color name="switch_thumb_on">#FFFFFF</color>
+    <color name="switch_track_on">#5C7CFA</color>
+
+    <!-- Text -->
+    <color name="text_primary">#E8E9F4</color>
+    <color name="text_secondary">#8A8DA8</color>
+    <color name="text_tertiary">#5C5F7A</color>
+    <color name="text_link">#7E98FC</color>
+
+    <!-- Error -->
+    <color name="error">#EF5350</color>
+    <color name="error_container">#2E0A0A</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+
+    <!-- Download button -->
+    <color name="download_button">#5C7CFA</color>
+
+    <!-- Privacy text -->
+    <color name="privacy_text">#3A3D55</color>
+</resources>

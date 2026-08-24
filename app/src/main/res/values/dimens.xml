@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_48">48dp</dimen>
+
+    <!-- Corner radii -->
+    <dimen name="radius_small">12dp</dimen>
+    <dimen name="radius_medium">20dp</dimen>
+    <dimen name="radius_large">28dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+    <dimen name="radius_icon_bg">14dp</dimen>
+
+    <!-- Card elevations -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
+
+    <!-- Header card -->
+    <dimen name="header_card_margin_h">16dp</dimen>
+    <dimen name="header_card_margin_top">8dp</dimen>
+    <dimen name="header_card_padding">16dp</dimen>
+    <dimen name="header_logo_size">48dp</dimen>
+
+    <!-- Icon backgrounds -->
+    <dimen name="icon_bg_size_large">52dp</dimen>
+    <dimen name="icon_bg_size_medium">44dp</dimen>
+    <dimen name="icon_bg_size_small">36dp</dimen>
+    <dimen name="icon_size_large">28dp</dimen>
+    <dimen name="icon_size_medium">22dp</dimen>
+    <dimen name="icon_size_small">18dp</dimen>
+
+    <!-- Bottom navigation -->
+    <dimen name="bottom_nav_height">72dp</dimen>
+    <dimen name="bottom_nav_margin">12dp</dimen>
+    <dimen name="bottom_nav_radius">28dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_size">56dp</dimen>
+
+    <!-- Quick tool card -->
+    <dimen name="quick_tool_card_height">120dp</dimen>
+    <dimen name="quick_tool_card_padding">16dp</dimen>
+
+    <!-- Tool list item -->
+    <dimen name="tool_list_item_padding_v">14dp</dimen>
+    <dimen name="tool_list_item_padding_h">16dp</dimen>
+
+    <!-- History item -->
+    <dimen name="history_item_padding">16dp</dimen>
+    <dimen name="history_download_btn_size">40dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_app_name">20sp</dimen>
+    <dimen name="text_size_subtitle">10sp</dimen>
+    <dimen name="text_size_section_header">11sp</dimen>
+    <dimen name="text_size_tool_name">15sp</dimen>
+    <dimen name="text_size_tool_desc">13sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_tag">9sp</dimen>
+
+    <!-- Screen horizontal padding -->
+    <dimen name="screen_padding_h">16dp</dimen>
+    <dimen name="screen_padding_v">8dp</dimen>
+
+    <!-- Search bar -->
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="search_bar_radius">16dp</dimen>
+
+    <!-- Indicator dot -->
+    <dimen name="indicator_dot_size">8dp</dimen>
+
+    <!-- Divider -->
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- Bottom padding to account for nav bar -->
+    <dimen name="bottom_nav_padding">96dp</dimen>
+</resources>

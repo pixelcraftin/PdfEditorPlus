@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">PdfEditor+</string>
+    <string name="app_tagline">TRUE PDF ESSENTIALS</string>
+    <string name="app_version">V1.0.1</string>
+    <string name="app_version_full">PDFEDITOR+ V1.0.1</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">HOME</string>
+    <string name="nav_tools">TOOLS</string>
+    <string name="nav_history">HISTORY</string>
+    <string name="nav_settings">SETTINGS</string>
+
+    <!-- Home Screen -->
+    <string name="recent_files">RECENT FILES</string>
+    <string name="view_all">VIEW ALL</string>
+    <string name="quick_tools">QUICK TOOLS</string>
+    <string name="core_tools">CORE TOOLS</string>
+    <string name="more_tools">More Tools</string>
+    <string name="full_catalog">FULL CATALOG</string>
+    <string name="no_recent_files">No recent files yet.\nUse a tool to get started.</string>
+
+    <!-- Tools Screen -->
+    <string name="tools_title">Tools+</string>
+    <string name="tools_subtitle">FULL CATALOG</string>
+    <string name="search_tools_hint">Search tools…</string>
+    <string name="category_convert">CONVERT</string>
+    <string name="category_edit">EDIT</string>
+    <string name="category_optimize">OPTIMIZE</string>
+    <string name="category_secure">SECURE</string>
+
+    <!-- Tool names -->
+    <string name="tool_pdf_to_image">PDF to Image</string>
+    <string name="tool_image_to_pdf">Image to PDF</string>
+    <string name="tool_extract_images">Extract Images</string>
+    <string name="tool_pdf_to_text">PDF to Text</string>
+    <string name="tool_merge_pdf">Merge PDF</string>
+    <string name="tool_split_pdf">Split PDF</string>
+    <string name="tool_rotate_pdf">Rotate PDF</string>
+    <string name="tool_rearrange_pdf">Rearrange PDF</string>
+    <string name="tool_page_numbers">Page Numbers</string>
+    <string name="tool_watermark">Watermark</string>
+    <string name="tool_signature">Signature</string>
+    <string name="tool_compress_pdf">Compress PDF</string>
+    <string name="tool_grayscale">Grayscale</string>
+    <string name="tool_image_compressor">Image Compressor</string>
+    <string name="tool_image_round_cropping">Image Round Cropping</string>
+    <string name="tool_protect_pdf">Protect PDF</string>
+    <string name="tool_unlock_pdf">Unlock PDF</string>
+    <string name="tool_metadata">Metadata</string>
+    <string name="tool_extract">Extract</string>
+    <string name="tool_compress">Compress</string>
+    <string name="tool_protect">Protect</string>
+    <string name="tool_merge">Merge</string>
+    <string name="tool_split">Split</string>
+
+    <!-- Tool descriptions -->
+    <string name="desc_pdf_to_image">Convert document pages into high-quality images.</string>
+    <string name="desc_image_to_pdf">Convert JPG, PNG, and WebP into a professional PDF.</string>
+    <string name="desc_extract_images">Pull out all original images embedded in a PDF.</string>
+    <string name="desc_pdf_to_text">Extract plain text from your PDF documents.</string>
+    <string name="desc_merge_pdf">Combine multiple PDF files into one document.</string>
+    <string name="desc_split_pdf">Visually extract specific pages or ranges.</string>
+    <string name="desc_rotate_pdf">Fix page orientation permanently.</string>
+    <string name="desc_rearrange_pdf">Drag and drop pages to reorder them.</string>
+    <string name="desc_page_numbers">Add numbering to your documents automatically.</string>
+    <string name="desc_watermark">Overlay custom text for branding or security.</string>
+    <string name="desc_signature">Add your electronic signature to any document.</string>
+    <string name="desc_compress_pdf">Optimize your file size for easier sharing.</string>
+    <string name="desc_grayscale">Convert all document pages to black and white.</string>
+    <string name="desc_image_compressor">Compress image files (JPG, PNG, WebP) offline.</string>
+    <string name="desc_image_round_cropping">Crop images into a round or rounded corner shape.</string>
+    <string name="desc_protect_pdf">Secure your documents with strong encryption.</string>
+    <string name="desc_unlock_pdf">Remove passwords from your protected files.</string>
+    <string name="desc_metadata">Edit document properties for better privacy.</string>
+    <string name="combine_pdfs">COMBINE PDFS</string>
+    <string name="extract_pages">EXTRACT PAGES</string>
+    <string name="reduce_size">REDUCE SIZE</string>
+    <string name="encrypt_file">ENCRYPT FILE</string>
+
+    <!-- History Screen -->
+    <string name="history_title">History</string>
+    <string name="recent_files_label">RECENT FILES</string>
+    <string name="search_documents_hint">Search documents…</string>
+    <string name="no_history">No history yet.\nProcessed files will appear here.</string>
+    <string name="privacy_protocol">PRIVACY PROTOCOL</string>
+    <string name="privacy_protocol_desc">Documents are processed locally in your private environment. Activity logs are stored on this device only.</string>
+    <string name="clear_all">Clear All</string>
+    <string name="download">Download</string>
+    <string name="open_file">Open</string>
+    <string name="share_file">Share</string>
+    <string name="delete_entry">Delete</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="app_configuration">APP CONFIGURATION</string>
+    <string name="appearance">APPEARANCE</string>
+    <string name="appearance_label">Appearance</string>
+    <string name="theme_mode">THEME MODE</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="workflow">WORKFLOW</string>
+    <string name="auto_download">Auto-Download</string>
+    <string name="direct_save_on_device">DIRECT SAVE ON DEVICE</string>
+    <string name="default_author">DEFAULT AUTHOR</string>
+    <string name="author_hint">Enter your name…</string>
+    <string name="privacy">PRIVACY</string>
+    <string name="auto_wipe_history">Auto-Wipe History</string>
+    <string name="automatic_log_destruction">AUTOMATIC LOG DESTRUCTION</string>
+    <string name="history_limit">History Limit</string>
+    <string name="files_to_keep">FILES TO KEEP</string>
+    <string name="limit_10">10 Files</string>
+    <string name="limit_25">25 Files</string>
+    <string name="limit_50">50 Files</string>
+    <string name="limit_100">100 Files</string>
+    <string name="limit_unlimited">Unlimited</string>
+    <string name="clear_history">Clear History</string>
+    <string name="delete_all_recent_files">DELETE ALL RECENT FILES</string>
+    <string name="clear_history_confirm">Clear all history?</string>
+    <string name="clear_history_confirm_msg">This will permanently delete all %d history entries. This action cannot be undone.</string>
+    <string name="about_section">ABOUT</string>
+    <string name="about_pdfeditor">About PdfEditor+</string>
+    <string name="report_section">REPORT</string>
+    <string name="report_an_issue">Report an Issue</string>
+    <string name="help_us_improve">HELP US IMPROVE THE APP</string>
+
+    <!-- About Screen -->
+    <string name="about_title">About</string>
+    <string name="how_it_works">How it Works</string>
+    <string name="private_open_source">100% Private &amp; Open Source</string>
+    <string name="about_desc">PdfEditor+ runs entirely on your device. While traditional tools force you to upload sensitive documents to their servers, our app uses an on-device, &lt;b&gt;100% open-source engine&lt;/b&gt; to process everything locally.</string>
+    <string name="zero_cloud_full">&lt;b&gt;Zero Cloud:&lt;/b&gt; Your PDFs never leave your phone. Editing, signing, and merging happen locally via your phone\'s processor.</string>
+    <string name="instant_offline_full">&lt;b&gt;Instant &amp; Offline:&lt;/b&gt; No internet required. Edit instantly on planes, in remote areas, or in high-security environments.</string>
+    <string name="about_privacy_statement">Ultimate privacy through open-source transparency. Your data stays on your device — exactly where it belongs.</string>
+    <string name="connect">CONNECT</string>
+    <string name="github">GitHub</string>
+    <string name="x_twitter">X / Twitter</string>
+    <string name="legal">LEGAL</string>
+    <string name="open_source_libraries">Open Source Libraries</string>
+    <string name="open_source_desc">Third-party packages used in the app</string>
+
+    <!-- Open Source Screen -->
+    <string name="open_source_title">Open Source</string>
+    <string name="core_engine">CORE ENGINE</string>
+    <string name="ui_utilities">UI &amp; UTILITIES</string>
+
+    <!-- Tool screens common -->
+    <string name="pick_file">Pick File</string>
+    <string name="pick_pdf">Pick PDF</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="pick_images">Pick Images</string>
+    <string name="pick_pdfs">Pick PDFs</string>
+    <string name="processing">Processing…</string>
+    <string name="done">Done</string>
+    <string name="process">Process</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="error_processing">Error: %s</string>
+    <string name="success_saved">Saved: %s</string>
+    <string name="file_size">%s</string>
+    <string name="no_file_selected">No file selected</string>
+    <string name="tap_to_pick">Tap to select a file</string>
+    <string name="tap_to_pick_pdf">Tap to select a PDF file</string>
+    <string name="tap_to_pick_image">Tap to select image</string>
+    <string name="tap_to_pick_images">Tap to select images</string>
+    <string name="tap_to_pick_pdfs">Tap to select PDF files</string>
+    <string name="browse_from_device">Tap anywhere in this box to browse</string>
+    <string name="output_format">Output Format</string>
+    <string name="quality">Quality</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <!-- Image to PDF -->
+    <string name="add_more_images">Add More Images</string>
+    <string name="reorder_images">Drag to reorder</string>
+    <string name="output_filename">Output Filename</string>
+    <string name="page_size">Page Size</string>
+    <string name="a4">A4</string>
+    <string name="letter">Letter</string>
+    <string name="page_size_only_image">Only Image</string>
+    <string name="fit_to_page">Fit to Page</string>
+
+    <!-- PDF to Image -->
+    <string name="select_pages">Select Pages</string>
+    <string name="all_pages">All Pages</string>
+    <string name="image_format">Image Format</string>
+    <string name="jpg">JPG</string>
+    <string name="png">PNG</string>
+
+    <!-- Merge PDF -->
+    <string name="add_pdf">Add PDF</string>
+    <string name="merge">Merge</string>
+    <string name="drag_to_reorder">Drag to reorder</string>
+
+    <!-- Split PDF -->
+    <string name="split_mode">Split Mode</string>
+    <string name="by_page_range">By Page Range</string>
+    <string name="every_n_pages">Every N Pages</string>
+    <string name="page_range_hint">e.g. 1-3, 5, 7-9</string>
+
+    <!-- Rotate -->
+    <string name="rotation_angle">Rotation</string>
+    <string name="rotate_right">↻ Right (90°)</string>
+    <string name="rotate_left">↺ Left (90°)</string>
+    <string name="rotate_up">⬆ Up (0°)</string>
+    <string name="rotate_bottom">⬇ Bottom (180°)</string>
+    <string name="rotate_90">90°</string>
+    <string name="rotate_180">180°</string>
+    <string name="rotate_270">270°</string>
+    <string name="apply_to">Apply To</string>
+    <string name="all_pages_label">All Pages</string>
+    <string name="even_pages">Even Pages</string>
+    <string name="odd_pages">Odd Pages</string>
+
+    <!-- Watermark -->
+    <string name="watermark_text">Watermark Text</string>
+    <string name="watermark_hint">e.g. CONFIDENTIAL</string>
+    <string name="opacity">Opacity</string>
+    <string name="font_size">Font Size</string>
+    <string name="position">Position</string>
+    <string name="diagonal">Diagonal</string>
+    <string name="watermark_angle">Watermark Angle</string>
+    <string name="angle_45_diagonal">45° (Diagonal)</string>
+    <string name="angle_0_horizontal">0° (Horizontal)</string>
+    <string name="angle_neg_45">-45° (Reverse Diagonal)</string>
+    <string name="angle_90">90°</string>
+    <string name="angle_neg_90">-90° (Vertical)</string>
+
+    <!-- Protect / Unlock -->
+    <string name="set_password">Set Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="passwords_mismatch">Passwords do not match</string>
+    <string name="wrong_password">Wrong password</string>
+
+    <!-- Metadata -->
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="subject">Subject</string>
+    <string name="keywords">Keywords</string>
+    <string name="creator">Creator</string>
+
+    <!-- Compress -->
+    <string name="compression_level">Compression Level</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="original_size">Original: %s</string>
+    <string name="compressed_size">Compressed: %s</string>
+
+    <!-- Round Crop -->
+    <string name="crop_shape">Crop Shape</string>
+    <string name="circle">Circle</string>
+    <string name="rounded_rectangle">Rounded Rectangle</string>
+    <string name="corner_radius_dp">Corner Radius</string>
+
+    <!-- Page Numbers -->
+    <string name="number_position">Position</string>
+    <string name="top_left">Top Left</string>
+    <string name="top_center">Top Center</string>
+    <string name="top_right">Top Right</string>
+    <string name="bottom_left">Bottom Left</string>
+    <string name="bottom_center">Bottom Center</string>
+    <string name="bottom_right">Bottom Right</string>
+    <string name="start_from">Start From</string>
+    <string name="number_format">Format</string>
+
+    <!-- Signature -->
+    <string name="add_signature">Add Signature</string>
+    <string name="pick_signature">Pick Signature from Gallery</string>
+    <string name="change_signature">Change Signature</string>
+    <string name="remove_signature">Remove Signature</string>
+    <string name="apply_signature_pages">Apply Signature To</string>
+    <string name="apply_all_pages">All Pages</string>
+    <string name="apply_specific_pages">Specific Page(s)</string>
+    <string name="specific_pages_hint">e.g. 1 or 1-3, 5</string>
+    <string name="draw_signature">Draw your signature</string>
+    <string name="clear_signature">Clear</string>
+    <string name="place_on_page">Place on page</string>
+    <string name="err_no_signature">Please select a signature image</string>
+
+    <!-- External Links -->
+    <string name="github_url">https://github.com/pixelcraftin</string>
+    <string name="twitter_url">https://x.com/CraftinPixel</string>
+    <string name="report_issue_url">https://github.com/pixelcraftin/PdfEditorPlus/issues</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_url">https://pixelcraftin.co.in/App%20Policy/pdf-policy</string>
+
+    <!-- Errors / Messages -->
+    <string name="err_no_file">Please select a file first</string>
+    <string name="err_no_images">Please add at least one image</string>
+    <string name="err_no_pdfs">Please add at least two PDFs to merge</string>
+    <string name="err_password_empty">Password cannot be empty</string>
+    <string name="err_invalid_range">Invalid page range</string>
+    <string name="msg_saved_to_downloads">Saved to Downloads</string>
+    <string name="msg_processing_complete">Processing complete!</string>
+    <string name="msg_no_text_found">No text found in this document</string>
+    <string name="action_view_file">View File</string>
+    <string name="action_share">Share</string>
+</resources>

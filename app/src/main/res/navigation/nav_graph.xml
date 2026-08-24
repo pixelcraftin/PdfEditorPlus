@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/toolsFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.tools.ToolsFragment"
+        android:label="Tools"
+        tools:layout="@layout/fragment_tools"/>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.history.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings"/>
+
+    <!-- Tool Fragments -->
+    <fragment
+        android:id="@+id/imageToPdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.ImageToPdfFragment"
+        android:label="Image to PDF"
+        tools:layout="@layout/fragment_tool_image_to_pdf"/>
+
+    <fragment
+        android:id="@+id/pdfToImageFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.PdfToImageFragment"
+        android:label="PDF to Image"
+        tools:layout="@layout/fragment_tool_pdf_to_image"/>
+
+    <fragment
+        android:id="@+id/extractImagesFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.ExtractImagesFragment"
+        android:label="Extract Images"
+        tools:layout="@layout/fragment_tool_extract_images"/>
+
+    <fragment
+        android:id="@+id/pdfToTextFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.PdfToTextFragment"
+        android:label="PDF to Text"
+        tools:layout="@layout/fragment_tool_pdf_to_text"/>
+
+    <fragment
+        android:id="@+id/mergePdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.MergePdfFragment"
+        android:label="Merge PDF"
+        tools:layout="@layout/fragment_tool_merge_pdf"/>
+
+    <fragment
+        android:id="@+id/splitPdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.SplitPdfFragment"
+        android:label="Split PDF"
+        tools:layout="@layout/fragment_tool_split_pdf"/>
+
+    <fragment
+        android:id="@+id/rotatePdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.RotatePdfFragment"
+        android:label="Rotate PDF"
+        tools:layout="@layout/fragment_tool_rotate_pdf"/>
+
+    <fragment
+        android:id="@+id/rearrangePdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.RearrangePdfFragment"
+        android:label="Rearrange PDF"
+        tools:layout="@layout/fragment_tool_rearrange_pdf"/>
+
+    <fragment
+        android:id="@+id/pageNumbersFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.PageNumbersFragment"
+        android:label="Page Numbers"
+        tools:layout="@layout/fragment_tool_page_numbers"/>
+
+    <fragment
+        android:id="@+id/watermarkFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.WatermarkFragment"
+        android:label="Watermark"
+        tools:layout="@layout/fragment_tool_watermark"/>
+
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.SignatureFragment"
+        android:label="Signature"
+        tools:layout="@layout/fragment_tool_signature"/>
+
+    <fragment
+        android:id="@+id/compressPdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.CompressPdfFragment"
+        android:label="Compress PDF"
+        tools:layout="@layout/fragment_tool_compress_pdf"/>
+
+    <fragment
+        android:id="@+id/grayscaleFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.GrayscaleFragment"
+        android:label="Grayscale"
+        tools:layout="@layout/fragment_tool_grayscale"/>
+
+    <fragment
+        android:id="@+id/imageCompressorFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.ImageCompressorFragment"
+        android:label="Image Compressor"
+        tools:layout="@layout/fragment_tool_image_compressor"/>
+
+    <fragment
+        android:id="@+id/imageRoundCroppingFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.ImageRoundCroppingFragment"
+        android:label="Image Round Cropping"
+        tools:layout="@layout/fragment_tool_image_round_cropping"/>
+
+    <fragment
+        android:id="@+id/protectPdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.ProtectPdfFragment"
+        android:label="Protect PDF"
+        tools:layout="@layout/fragment_tool_protect_pdf"/>
+
+    <fragment
+        android:id="@+id/unlockPdfFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.UnlockPdfFragment"
+        android:label="Unlock PDF"
+        tools:layout="@layout/fragment_tool_unlock_pdf"/>
+
+    <fragment
+        android:id="@+id/metadataFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.toolscreens.MetadataFragment"
+        android:label="Metadata"
+        tools:layout="@layout/fragment_tool_metadata"/>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/openSourceFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.opensource.OpenSourceFragment"
+        android:label="Open Source"
+        tools:layout="@layout/fragment_opensource"/>
+</navigation>
