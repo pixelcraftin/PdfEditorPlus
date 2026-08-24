@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+android:viewportWidth="256"
+android:viewportHeight="256"
+android:width="256dp"
+android:height="256dp">
+<path
+android:pathData="M78 36a42 42 0 1 0 42 42a42 42 0 0 0 -42 -42m0 60a18 18 0 1 1 18 -18a18 18 0 0 1 -18 18m100 24a42 42 0 1 0 -42 -42a42 42 0 0 0 42 42m0 -60a18 18 0 1 1 -18 18a18 18 0 0 1 18 -18M78 136a42 42 0 1 0 42 42a42 42 0 0 0 -42 -42m0 60a18 18 0 1 1 18 -18a18 18 0 0 1 -18 18m100 -60a42 42 0 1 0 42 42a42 42 0 0 0 -42 -42m0 60a18 18 0 1 1 18 -18a18 18 0 0 1 -18 18"
+android:fillColor="#5C7CFA" />
+</vector>
