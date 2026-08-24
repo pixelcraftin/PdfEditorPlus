@@ -1,0 +1,34 @@
+<p><b>PdfEditor+</b> is a 100% private, on-device PDF and image manipulation toolkit designed for privacy-conscious users. Unlike traditional tools that require uploading sensitive documents to external cloud servers, PdfEditor+ processes all files locally on your phone without internet access.</p>
+
+<h3><b>📄 PDF Manipulation Tools</b></h3>
+<ul>
+  <li><b>Merge PDF:</b> Combine multiple PDF documents into a single organized file.</li>
+  <li><b>Split PDF:</b> Extract specific pages or custom page ranges.</li>
+  <li><b>Rotate PDF:</b> Fix page orientations permanently (90°, 180°, 270°).</li>
+  <li><b>Rearrange Pages:</b> Intuitive visual drag-and-drop page reordering.</li>
+  <li><b>Page Numbers:</b> Automatically add formatted page numbering to documents.</li>
+  <li><b>Watermark:</b> Overlay custom text for branding, copyright, or confidentiality.</li>
+  <li><b>Electronic Signature:</b> Sign documents directly with a smooth vector signature pad.</li>
+  <li><b>Compress PDF:</b> Reduce document file sizes for easy sharing.</li>
+  <li><b>Grayscale:</b> Convert colored documents into clean black-and-white copies.</li>
+  <li><b>Protect &amp; Unlock:</b> Encrypt PDFs with passwords or remove password protections.</li>
+  <li><b>Metadata Editor:</b> View and edit PDF metadata properties (Author, Title, Subject, Keywords).</li>
+</ul>
+
+<h3><b>🖼️ Image &amp; Conversion Tools</b></h3>
+<ul>
+  <li><b>Image to PDF:</b> Convert JPG, PNG, and WebP images into clean PDFs.</li>
+  <li><b>PDF to Image:</b> Render and export document pages into high-resolution images.</li>
+  <li><b>Extract Images:</b> Pull out all original embedded images from any PDF.</li>
+  <li><b>PDF to Text (OCR):</b> Extract plain text from documents using on-device optical character recognition.</li>
+  <li><b>Image Compressor:</b> Compress images with rotation and quality control.</li>
+  <li><b>Image Round Cropping:</b> Crop images into circular or custom-radius rounded rectangles with transparent WebP/PNG output.</li>
+</ul>
+
+<h3><b>🔒 Privacy &amp; Security Highlights</b></h3>
+<ul>
+  <li><b>Zero Cloud:</b> Your documents and images never leave your device.</li>
+  <li><b>100% Offline:</b> Works without an internet connection or cellular data.</li>
+  <li><b>No Tracking / No Ads:</b> No analytics, telemetry, or third-party trackers.</li>
+  <li><b>Clean &amp; Modern UI:</b> Beautiful Material Design interface with Dark Mode support.</li>
+</ul>
