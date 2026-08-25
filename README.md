@@ -26,6 +26,23 @@ Unlike traditional PDF tools that require uploading sensitive documents to exter
 
 ---
 
+## Preview
+
+<table>
+  <tr>
+    <td><img src="public/Screenshots/ss-1.png" width="250" alt="Android View"></td>
+    <td><img src="public/Screenshots/ss-2.png" width="250" alt="Android View"></td>
+    <td><img src="public/Screenshots/ss-3.png" width="250" alt="Android View"></td>
+  </tr>
+  <tr>
+    <td><img src="public/Screenshots/ss-4.png" width="250" alt="Android View"></td>
+    <td><img src="public/Screenshots/ss-5.png" width="250" alt="Android View"></td>
+    <td><img src="public/Screenshots/ss-6.png" width="250" alt="Android View"></td>
+  </tr>
+</table>
+
+---
+
 ## ✨ Features & Tools
 
 ### 📄 PDF Manipulation
@@ -82,7 +99,7 @@ Unlike traditional PDF tools that require uploading sensitive documents to exter
 ### Clone & Build
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/PdfEditorPlus.git
+git clone https://github.com/pixelcraftin/PdfEditorPlus.git
 cd PdfEditorPlus
 
 # Build debug APK
