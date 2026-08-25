@@ -109,6 +109,7 @@
         android:id="@+id/rvPdfActions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false"/>
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never" />
 
 </LinearLayout>
