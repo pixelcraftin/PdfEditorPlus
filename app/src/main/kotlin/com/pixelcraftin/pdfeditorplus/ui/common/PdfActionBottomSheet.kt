@@ -19,6 +19,10 @@ import com.google.android.material.card.MaterialCardView
 import com.pixelcraftin.pdfeditorplus.R
 import com.pixelcraftin.pdfeditorplus.databinding.DialogPdfActionPickerBinding
 import com.pixelcraftin.pdfeditorplus.util.FileUtils
+import android.app.Dialog
+import android.graphics.Color
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 data class PdfActionOption(
     val id: String,
@@ -52,6 +56,35 @@ class PdfActionBottomSheet : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         pdfUri = arguments?.getParcelable(ARG_URI)
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
+        dialog.setOnShowListener {
+            val bottomSheet = dialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundColor(Color.TRANSPARENT)
+            bottomSheet?.background = null
+        }
+        return dialog
+    }
+
+override fun onStart() {
+        super.onStart()
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        val bottomSheet = dialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+        bottomSheet?.let { sheet ->
+            sheet.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+            sheet.background = null
+
+            val behavior = com.google.android.material.bottomsheet.BottomSheetBehavior.from(sheet)
+            
+            val displayMetrics = resources.displayMetrics
+            val halfScreenHeight = (displayMetrics.heightPixels * 0.60).toInt()
+            behavior.peekHeight = halfScreenHeight
+            
+            behavior.isFitToContents = false
+            behavior.state = com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
