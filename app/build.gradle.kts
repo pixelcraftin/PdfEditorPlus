@@ -30,6 +30,16 @@ android {
         }
     }
 
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("foss") {
+            dimension = "distribution"
+        }
+        create("play") {
+            dimension = "distribution"
+        }
+    }
+
     base {
         archivesName.set("PdfEditorPlus")
     }
@@ -153,8 +163,8 @@ dependencies {
     // PDF manipulation - iText 7 Community (AGPL compatible with GPL v3)
     implementation(libs.itext7.core)
 
-    // ML Kit - Play Services On-device OCR (unbundled)
-    implementation(libs.play.services.mlkit.text.recognition)
+    // ML Kit - Play Services On-device OCR (Play distribution only)
+    "playImplementation"(libs.play.services.mlkit.text.recognition)
 
     // Image Cropping
     implementation(libs.ucrop)
