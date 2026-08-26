@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pixelcraftin.pdfeditorplus.R
+import com.pixelcraftin.pdfeditorplus.ocr.TextRecognizerProvider
 import com.pixelcraftin.pdfeditorplus.adapter.LibraryAdapter
 import com.pixelcraftin.pdfeditorplus.data.model.OpenSourceLibrary
 import com.pixelcraftin.pdfeditorplus.databinding.FragmentOpensourceBinding
@@ -26,6 +27,7 @@ class OpenSourceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
+        val ocrEngine = TextRecognizerProvider.instance
         val libraries = listOf(
             OpenSourceLibrary(
                 "iText 7 Community", "PDF manipulation engine (merge, split, rotate, watermark, protect, metadata)",
@@ -38,8 +40,8 @@ class OpenSourceFragment : Fragment() {
                 R.drawable.ic_pdf_to_image, R.drawable.bg_icon_teal, R.color.icon_teal
             ),
             OpenSourceLibrary(
-                "ML Kit Text Recognition", "On-device OCR for PDF to Text",
-                "Apache 2.0", "https://developers.google.com/ml-kit",
+                ocrEngine.engineName, ocrEngine.engineDescription,
+                "Apache 2.0 / Open-Source", "https://github.com/JOYSAHA-0/PdfEditorPlus",
                 R.drawable.ic_pdf_to_text, R.drawable.bg_icon_orange, R.color.icon_orange
             ),
             OpenSourceLibrary(
