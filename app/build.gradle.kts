@@ -69,7 +69,9 @@ android {
             ndk {
                 debugSymbolLevel = "NONE"
             }
-            signingConfig = if (keystorePropertiesFile.exists()) signingConfigs.getByName("release") else null
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
