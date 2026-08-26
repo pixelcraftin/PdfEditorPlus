@@ -18,6 +18,7 @@ import com.pixelcraftin.pdfeditorplus.R
 import com.pixelcraftin.pdfeditorplus.data.db.HistoryDatabase
 import com.pixelcraftin.pdfeditorplus.data.model.HistoryItem
 import com.pixelcraftin.pdfeditorplus.databinding.FragmentToolImageToPdfBinding
+import com.pixelcraftin.pdfeditorplus.ocr.TextRecognizerProvider
 import com.pixelcraftin.pdfeditorplus.util.FileUtils
 import com.pixelcraftin.pdfeditorplus.util.PdfUtils
 import kotlinx.coroutines.launch
@@ -88,7 +89,7 @@ class PdfToTextFragment : Fragment() {
                 return@launch
             }
 
-            val result = PdfUtils.extractText(inputFile)
+            val result = TextRecognizerProvider.instance.extractTextFromPdf(requireContext(), inputFile)
 
             binding.progressBar.visibility = View.GONE
             binding.btnProcess.isEnabled = true
