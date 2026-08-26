@@ -72,13 +72,13 @@ class UnlockPdfFragment : Fragment() {
         val container = binding.optionsContainer
 
         val label = TextView(requireContext()).apply {
-            text = "Enter Password (User or Statement Password)"
+            text = "Enter Password (PDF Password)"
             textSize = 14f
             setTextColor(resources.getColor(R.color.text_primary, null))
             setPadding(0, 0, 0, 8)
         }
         etPassword = EditText(requireContext()).apply {
-            hint = "e.g. DOB/PAN/Statement password"
+            hint = "Fill the password here"
             inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
             layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
         }
@@ -122,7 +122,7 @@ class UnlockPdfFragment : Fragment() {
                 )
             }
             result.onFailure {
-                Toast.makeText(requireContext(), "Decryption failed. Please check password (AES-128/256 or RC4 statement password).", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Decryption failed. Please check password.", Toast.LENGTH_LONG).show()
             }
         }
     }
