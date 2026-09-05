@@ -1,7 +1,7 @@
 # PdfEditor+
 
 <p align="center">
-  <img src="logo.webp" alt="PdfEditor+ Logo" width="120" height="120">
+  <img src="public/app-logo.webp" alt="PdfEditor+ Logo" width="120" height="120">
 </p>
 
 <p align="center">
