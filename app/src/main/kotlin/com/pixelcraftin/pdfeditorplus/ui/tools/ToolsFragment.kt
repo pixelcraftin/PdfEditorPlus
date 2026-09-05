@@ -63,6 +63,7 @@ class ToolsFragment : Fragment() {
         ToolItem("extract_images","Extract Images",getString(R.string.desc_extract_images),ToolCategory.CONVERT,R.drawable.ic_extract,R.drawable.bg_icon_orange,R.color.icon_orange,R.id.extractImagesFragment),
         ToolItem("pdf_to_text","PDF to Text",getString(R.string.desc_pdf_to_text),ToolCategory.CONVERT,R.drawable.ic_pdf_to_text,R.drawable.bg_icon_teal,R.color.icon_teal,R.id.pdfToTextFragment),
         // EDIT
+        ToolItem("document_editor","Document Editor","Edit images with filters, drawings, signature & export to A4 PDF",ToolCategory.EDIT,R.drawable.ic_brush,R.drawable.bg_icon_blue,R.color.icon_blue,R.id.documentEditorFragment),
         ToolItem("merge_pdf","Merge PDF",getString(R.string.desc_merge_pdf),ToolCategory.EDIT,R.drawable.ic_merge,R.drawable.bg_icon_blue,R.color.icon_blue,R.id.mergePdfFragment),
         ToolItem("split_pdf","Split PDF",getString(R.string.desc_split_pdf),ToolCategory.EDIT,R.drawable.ic_split,R.drawable.bg_icon_orange,R.color.icon_orange,R.id.splitPdfFragment),
         ToolItem("rotate_pdf","Rotate PDF",getString(R.string.desc_rotate_pdf),ToolCategory.EDIT,R.drawable.ic_rotate,R.drawable.bg_icon_blue,R.color.icon_blue,R.id.rotatePdfFragment),

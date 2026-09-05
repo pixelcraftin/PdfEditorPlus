@@ -53,12 +53,18 @@ object FileUtils {
     }
 
     /** Saves a processed file to the public Downloads / PdfEditor+ directory and notifies the system */
-    fun saveFileToDownloads(context: Context, file: File): Result<String> {
+    fun saveFileToDownloads(context: Context, file: File, targetFileName: String? = null): Result<String> {
         return try {
-            val mimeType = getMimeType(file.name)
+            val finalName = if (!targetFileName.isNullOrBlank()) {
+                val ext = file.extension.ifEmpty { "pdf" }
+                if (targetFileName.endsWith(".$ext", ignoreCase = true)) targetFileName else "$targetFileName.$ext"
+            } else {
+                file.name
+            }
+            val mimeType = getMimeType(finalName)
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
                 val contentValues = android.content.ContentValues().apply {
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, file.name)
+                    put(MediaStore.MediaColumns.DISPLAY_NAME, finalName)
                     put(MediaStore.MediaColumns.MIME_TYPE, mimeType)
                     put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_DOWNLOADS}/$OUTPUT_DIR")
                     put(MediaStore.MediaColumns.IS_PENDING, 1)
@@ -74,11 +80,11 @@ object FileUtils {
                 contentValues.clear()
                 contentValues.put(MediaStore.MediaColumns.IS_PENDING, 0)
                 resolver.update(uri, contentValues, null, null)
-                val targetPath = "Downloads/$OUTPUT_DIR/${file.name}"
+                val targetPath = "Downloads/$OUTPUT_DIR/$finalName"
                 Result.success(targetPath)
             } else {
                 val publicDir = getPublicDownloadsDir()
-                val destFile = File(publicDir, file.name)
+                val destFile = File(publicDir, finalName)
                 file.copyTo(destFile, overwrite = true)
                 android.media.MediaScannerConnection.scanFile(
                     context,
@@ -92,6 +98,94 @@ object FileUtils {
             e.printStackTrace()
             Result.failure(e)
         }
+    }
+
+    /** Prompts user to rename file before saving to Downloads */
+    fun promptSaveToDownloads(
+        context: Context,
+        file: File,
+        onSaved: ((String) -> Unit)? = null
+    ) {
+        val baseName = file.nameWithoutExtension
+        val ext = file.extension.ifEmpty { "pdf" }
+
+        val input = android.widget.EditText(context).apply {
+            setText(baseName)
+            setSelectAllOnFocus(true)
+            val pad = (16 * context.resources.displayMetrics.density).toInt()
+            setPadding(pad, pad, pad, pad)
+            background = androidx.core.content.ContextCompat.getDrawable(context, com.pixelcraftin.pdfeditorplus.R.drawable.bg_input_field)
+            setTextColor(androidx.core.content.ContextCompat.getColor(context, com.pixelcraftin.pdfeditorplus.R.color.text_primary))
+            textSize = 15f
+        }
+
+        val container = android.widget.FrameLayout(context).apply {
+            val marginH = (22 * context.resources.displayMetrics.density).toInt()
+            val marginV = (12 * context.resources.displayMetrics.density).toInt()
+            setPadding(marginH, marginV, marginH, marginV)
+            addView(input)
+        }
+
+        com.google.android.material.dialog.MaterialAlertDialogBuilder(context)
+            .setTitle("Save to Downloads 💾")
+            .setMessage("Edit file name (extension .$ext will be kept):")
+            .setView(container)
+            .setPositiveButton("Save") { _, _ ->
+                val enteredName = input.text.toString().trim()
+                val customName = if (enteredName.isNotBlank()) enteredName else baseName
+                saveFileToDownloads(context, file, customName).onSuccess { path ->
+                    android.widget.Toast.makeText(context, "Saved to $path", android.widget.Toast.LENGTH_SHORT).show()
+                    onSaved?.invoke(path)
+                }.onFailure { e ->
+                    android.widget.Toast.makeText(context, "Save failed: ${e.message}", android.widget.Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    /** Prompts user to rename batch files (prefix) before saving to Downloads */
+    fun promptSaveBatchToDownloads(
+        context: Context,
+        files: List<File>,
+        defaultPrefix: String = "extracted",
+        onSaved: ((Int) -> Unit)? = null
+    ) {
+        if (files.isEmpty()) return
+
+        val input = android.widget.EditText(context).apply {
+            setText(defaultPrefix)
+            setSelectAllOnFocus(true)
+            val pad = (16 * context.resources.displayMetrics.density).toInt()
+            setPadding(pad, pad, pad, pad)
+            background = androidx.core.content.ContextCompat.getDrawable(context, com.pixelcraftin.pdfeditorplus.R.drawable.bg_input_field)
+            setTextColor(androidx.core.content.ContextCompat.getColor(context, com.pixelcraftin.pdfeditorplus.R.color.text_primary))
+            textSize = 15f
+        }
+
+        val container = android.widget.FrameLayout(context).apply {
+            val marginH = (22 * context.resources.displayMetrics.density).toInt()
+            val marginV = (12 * context.resources.displayMetrics.density).toInt()
+            setPadding(marginH, marginV, marginH, marginV)
+            addView(input)
+        }
+
+        com.google.android.material.dialog.MaterialAlertDialogBuilder(context)
+            .setTitle("Save All to Downloads 💾")
+            .setMessage("Enter base file name for ${files.size} items:")
+            .setView(container)
+            .setPositiveButton("Save All") { _, _ ->
+                val prefix = input.text.toString().trim().ifBlank { defaultPrefix }
+                var savedCount = 0
+                files.forEachIndexed { idx, f ->
+                    val customName = "${prefix}_${idx + 1}.${f.extension}"
+                    saveFileToDownloads(context, f, customName).onSuccess { savedCount++ }
+                }
+                android.widget.Toast.makeText(context, "Saved $savedCount items to Downloads/PdfEditor+", android.widget.Toast.LENGTH_SHORT).show()
+                onSaved?.invoke(savedCount)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     /** Returns a content URI via FileProvider */

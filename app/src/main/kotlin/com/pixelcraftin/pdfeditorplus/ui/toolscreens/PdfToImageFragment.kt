@@ -178,11 +178,11 @@ class PdfToImageFragment : Fragment() {
         binding.tvResultPath.text = "$count image(s) created in ${file.parentFile?.name}"
 
         binding.btnDownload.setOnClickListener {
-            var savedCount = 0
-            for (f in lastGeneratedFiles) {
-                FileUtils.saveFileToDownloads(requireContext(), f).onSuccess { savedCount++ }
+            if (lastGeneratedFiles.size == 1) {
+                FileUtils.promptSaveToDownloads(requireContext(), lastGeneratedFiles.first())
+            } else {
+                FileUtils.promptSaveBatchToDownloads(requireContext(), lastGeneratedFiles, "pdf_page")
             }
-            Toast.makeText(requireContext(), "Saved $savedCount image(s) to Downloads/PdfEditor+", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnShare.setOnClickListener { FileUtils.shareFile(requireContext(), file) }

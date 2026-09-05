@@ -127,11 +127,11 @@ class ExtractImagesFragment : Fragment() {
                 binding.tvResultPath.text = "${files.size} image(s) extracted into ${outputDir.name}"
 
                 binding.btnDownload.setOnClickListener {
-                    var count = 0
-                    for (f in lastExtractedFiles) {
-                        FileUtils.saveFileToDownloads(requireContext(), f).onSuccess { count++ }
+                    if (lastExtractedFiles.size == 1) {
+                        FileUtils.promptSaveToDownloads(requireContext(), lastExtractedFiles.first())
+                    } else {
+                        FileUtils.promptSaveBatchToDownloads(requireContext(), lastExtractedFiles, "extracted_img")
                     }
-                    Toast.makeText(requireContext(), "Saved $count image(s) to Downloads/PdfEditor+", Toast.LENGTH_SHORT).show()
                 }
 
                 val firstFile = files.firstOrNull()

@@ -103,11 +103,7 @@ class PdfToTextFragment : Fragment() {
                 FileOutputStream(textFile).use { out -> out.write(extractedText.toByteArray()) }
 
                 binding.btnDownload.setOnClickListener {
-                    FileUtils.saveFileToDownloads(requireContext(), textFile).onSuccess { path ->
-                        Toast.makeText(requireContext(), "Saved text to $path", Toast.LENGTH_SHORT).show()
-                    }.onFailure { e ->
-                        Toast.makeText(requireContext(), "Download failed: ${e.message}", Toast.LENGTH_SHORT).show()
-                    }
+                    FileUtils.promptSaveToDownloads(requireContext(), textFile)
                 }
 
                 binding.btnShare.setOnClickListener { FileUtils.shareFile(requireContext(), textFile) }

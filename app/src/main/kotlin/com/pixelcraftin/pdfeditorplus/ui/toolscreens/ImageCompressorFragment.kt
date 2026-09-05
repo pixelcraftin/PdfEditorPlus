@@ -241,11 +241,11 @@ class ImageCompressorFragment : Fragment() {
                 binding.tvResultPath.text = "Original: ${FileUtils.formatSize(totalOrigSize)} → Compressed: ${FileUtils.formatSize(totalCompressedSize)} ($percentSaved% reduced)"
 
                 binding.btnDownload.setOnClickListener {
-                    var count = 0
-                    for (f in lastCompressedFiles) {
-                        FileUtils.saveFileToDownloads(requireContext(), f).onSuccess { count++ }
+                    if (lastCompressedFiles.size == 1) {
+                        FileUtils.promptSaveToDownloads(requireContext(), lastCompressedFiles.first())
+                    } else {
+                        FileUtils.promptSaveBatchToDownloads(requireContext(), lastCompressedFiles, "compressed_img")
                     }
-                    Toast.makeText(requireContext(), "Saved $count compressed image(s) to Downloads/PdfEditor+", Toast.LENGTH_SHORT).show()
                 }
 
                 binding.btnShare.setOnClickListener { FileUtils.shareFile(requireContext(), firstFile) }

@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val pickMultipleImagesLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uris ->
+        if (!uris.isNullOrEmpty()) {
+            val bundle = com.pixelcraftin.pdfeditorplus.ui.documenteditor.DocumentEditorFragment.createBundle(uris)
+            navController.navigate(R.id.documentCropFragment, bundle)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         prefs = AppPreferences(this)
@@ -156,8 +163,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupFab() {
         binding.fabAdd.setOnClickListener {
-            // Open device storage for selecting PDF
-            pickPdfLauncher.launch(arrayOf("application/pdf"))
+            // Trigger Android's native multi-image picker (supporting 200+ images without OOM)
+            pickMultipleImagesLauncher.launch("image/*")
         }
     }
 

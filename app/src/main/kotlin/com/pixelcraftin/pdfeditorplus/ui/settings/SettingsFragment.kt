@@ -121,6 +121,14 @@ class SettingsFragment : Fragment() {
         binding.rowAbout.setOnClickListener {
             findNavController().navigate(R.id.aboutFragment)
         }
+        binding.rowOtherApps.setOnClickListener {
+            val url = "https://play.google.com/store/apps/dev?id=4643660879459504423"
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            } catch (e: Exception) {
+                android.widget.Toast.makeText(requireContext(), "Could not open browser", android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
         binding.rowPrivacyPolicy.setOnClickListener {
             val url = getString(R.string.privacy_policy_url)
             try {

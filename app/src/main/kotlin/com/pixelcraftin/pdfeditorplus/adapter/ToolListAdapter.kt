@@ -36,14 +36,14 @@ class ToolListAdapter(
                 result.add(ListItem.Tool(tool))
             }
         }
-        result.add(ListItem.Footer("PDFEDITOR+ V1.0.1"))
+        result.add(ListItem.Footer("PDFEDITOR+ V1.0.6"))
         items = result
         notifyDataSetChanged()
     }
 
     fun submitFiltered(tools: List<ToolItem>) {
         val result = tools.map { ListItem.Tool(it) }.toMutableList<ListItem>()
-        result.add(ListItem.Footer("PDFEDITOR+ V1.0.1"))
+        result.add(ListItem.Footer("PDFEDITOR+ V1.0.6"))
         items = result
         notifyDataSetChanged()
     }

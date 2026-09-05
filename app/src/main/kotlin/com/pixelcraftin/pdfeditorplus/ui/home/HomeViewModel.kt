@@ -20,15 +20,15 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     val quickTools: List<ToolItem> = listOf(
+        ToolItem("document_editor", "Doc Editor", "", ToolCategory.EDIT,
+            R.drawable.ic_brush, R.drawable.bg_icon_blue, R.color.icon_blue,
+            R.id.documentEditorFragment),
         ToolItem("image_to_pdf", "Image to PDF", "", ToolCategory.CONVERT,
             R.drawable.ic_image_to_pdf, R.drawable.bg_icon_teal, R.color.icon_teal,
             R.id.imageToPdfFragment),
         ToolItem("pdf_to_image", "PDF to Image", "", ToolCategory.CONVERT,
             R.drawable.ic_pdf_to_image, R.drawable.bg_icon_teal, R.color.icon_teal,
             R.id.pdfToImageFragment),
-        ToolItem("extract_images", "Extract", "", ToolCategory.CONVERT,
-            R.drawable.ic_extract, R.drawable.bg_icon_orange, R.color.icon_orange,
-            R.id.extractImagesFragment),
         ToolItem("unlock_pdf", "Unlock PDF", "", ToolCategory.SECURE,
             R.drawable.ic_unlock, R.drawable.bg_icon_purple, R.color.icon_purple,
             R.id.unlockPdfFragment),

@@ -123,11 +123,7 @@ class ProtectPdfFragment : Fragment() {
                 binding.tvResultPath.text = it.absolutePath
 
                 binding.btnDownload.setOnClickListener {
-                    FileUtils.saveFileToDownloads(requireContext(), outputFile).onSuccess { path ->
-                        Toast.makeText(requireContext(), "Saved to $path", Toast.LENGTH_SHORT).show()
-                    }.onFailure { e ->
-                        Toast.makeText(requireContext(), "Download failed: ${e.message}", Toast.LENGTH_SHORT).show()
-                    }
+                    FileUtils.promptSaveToDownloads(requireContext(), outputFile)
                 }
 
                 binding.btnShare.setOnClickListener { FileUtils.shareFile(requireContext(), outputFile) }
