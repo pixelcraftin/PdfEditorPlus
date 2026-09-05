@@ -8,9 +8,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="29"
         tools:ignore="ScopedStorage" />
-    <!-- Android 13+ granular permissions -->
+    <!-- permissions -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
     <application
         android:name=".PdfEditorApp"
@@ -53,7 +52,7 @@
             </intent-filter>
         </activity>
 
-        <!-- FileProvider for sharing output files -->
+        <!-- FileProvider for sharing output -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -64,7 +63,7 @@
                 android:resource="@xml/file_provider_paths" />
         </provider>
 
-        <!-- uCrop activity -->
+        <!-- Crop -->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
