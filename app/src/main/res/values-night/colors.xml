@@ -13,6 +13,7 @@
 
     <!-- Backgrounds - Dark -->
     <color name="background">#0A0A0F</color>
+    <color name="editor_background">#0A0A0F</color>
     <color name="surface">#141419</color>
     <color name="surface_variant">#1A1A22</color>
     <color name="on_background">#E8E9F4</color>

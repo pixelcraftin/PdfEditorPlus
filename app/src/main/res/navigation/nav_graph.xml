@@ -149,4 +149,16 @@
         android:name="com.pixelcraftin.pdfeditorplus.ui.opensource.OpenSourceFragment"
         android:label="Open Source"
         tools:layout="@layout/fragment_opensource"/>
+
+    <fragment
+        android:id="@+id/documentCropFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.documenteditor.crop.DocumentCropFragment"
+        android:label="Crop Document"
+        tools:layout="@layout/fragment_document_crop"/>
+
+    <fragment
+        android:id="@+id/documentEditorFragment"
+        android:name="com.pixelcraftin.pdfeditorplus.ui.documenteditor.DocumentEditorFragment"
+        android:label="Document Editor"
+        tools:layout="@layout/fragment_document_editor"/>
 </navigation>

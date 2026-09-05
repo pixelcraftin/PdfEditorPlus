@@ -413,6 +413,67 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
+                <!-- OTHER APPS Section -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardOtherApps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/card_background">
+                    <LinearLayout
+                        android:id="@+id/rowOtherApps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="14dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <LinearLayout
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:gravity="center"
+                            android:background="@drawable/bg_icon_purple">
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/ic_apps"
+                                android:contentDescription="Other Apps"
+                                app:tint="@color/icon_purple"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Check out our other apps"
+                                android:textSize="14sp"
+                                android:textColor="@color/text_primary"
+                                android:fontFamily="sans-serif-medium"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Discover more tools on Google Play"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:contentDescription="Open"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
                 <!-- PRIVACY POLICY Section -->
                 <TextView
                     android:layout_width="wrap_content"

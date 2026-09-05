@@ -19,7 +19,7 @@
         <item name="android:statusBarColor">@color/background</item>
         <item name="android:navigationBarColor">@color/background</item>
         <item name="android:windowLightStatusBar">true</item>
-        <!-- Splash screen (Android 12+) -->
+        <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
         <!-- Shapes -->
@@ -64,6 +64,15 @@
     <style name="BottomSheet.PdfEditorPlus" parent="Widget.MaterialComponents.BottomSheet.Modal">
         <item name="shapeAppearance">@style/ShapeAppearance.PdfEditorPlus.Large</item>
         <item name="backgroundTint">@color/surface</item>
+    </style>
+
+    <style name="TransparentBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBottomSheetStyle</item>
+    </style>
+    <style name="TransparentBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="shapeAppearance">@null</item>
     </style>
 
     <!-- Tool bar title style -->

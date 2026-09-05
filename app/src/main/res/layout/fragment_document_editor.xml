@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Top Header Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                app:tint="@color/text_primary"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/tvEditorTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Document Editor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <TextView
+                    android:id="@+id/tvPageIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Page 1 of 1"
+                    android:textSize="11sp"
+                    android:textColor="@color/accent_teal"
+                    android:fontFamily="sans-serif-medium"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnAddPages"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_add"
+                android:background="@drawable/bg_pill"
+                android:padding="8dp"
+                android:layout_marginEnd="6dp"
+                app:tint="@color/primary"
+                android:contentDescription="Add more pages"/>
+
+            <ImageButton
+                android:id="@+id/btnDeletePage"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_delete"
+                android:background="@drawable/bg_pill"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                app:tint="@color/icon_red"
+                android:contentDescription="Delete page"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSavePdf"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Save PDF"
+                android:textSize="12sp"
+                android:textColor="@color/on_primary"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_check"
+                app:iconSize="16dp"
+                app:iconTint="@color/on_primary"
+                app:backgroundTint="@color/primary"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Center Canvas Area with ViewPager2 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerPages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- Progress Overlay -->
+        <FrameLayout
+            android:id="@+id/layoutProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:id="@+id/tvProgressTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Generating PDF..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginTop="16dp"/>
+
+                    <TextView
+                        android:id="@+id/tvProgressStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Processing page 1/1"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!-- Secondary Toolbar Options (Filters / Drawing Controls) -->
+    <!-- Filter Strip Panel -->
+    <LinearLayout
+        android:id="@+id/panelFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/card_background"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="COLOR FILTERS"
+                android:textSize="10sp"
+                android:textColor="@color/accent_teal"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBrightnessLow"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="–20% Bright"
+                android:textSize="10sp"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBrightnessHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="+20% Bright"
+                android:textSize="10sp"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:layout_marginStart="6dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <!-- Drawing Controls Panel -->
+    <LinearLayout
+        android:id="@+id/panelDrawing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:background="@color/card_background"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleDrawMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModePen"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="Pen"
+                android:textSize="11sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeHighlight"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="Highlight"
+                android:textSize="11sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeEraser"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:text="Eraser"
+                android:textSize="11sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <ImageButton
+            android:id="@+id/btnClearDrawings"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/bg_pill"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            app:tint="@color/icon_red"
+            android:contentDescription="Clear drawings"/>
+
+    </LinearLayout>
+
+    <!-- Page Thumbnails Strip -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/card_background"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPageThumbs"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <!-- Bottom Action Toolbar (Scrollable) -->
+    <HorizontalScrollView
+        android:id="@+id/bottomActionScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="@color/surface"
+        android:elevation="6dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Crop (Far Left First Item) -->
+            <LinearLayout
+                android:id="@+id/actionCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_crop"
+                    app:tint="@color/icon_orange"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crop"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Color Filter -->
+            <LinearLayout
+                android:id="@+id/actionFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_filter"
+                    app:tint="@color/primary"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Rotate CW -->
+            <LinearLayout
+                android:id="@+id/actionRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_rotate"
+                    app:tint="@color/icon_teal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rotate"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Draw / Eraser -->
+            <LinearLayout
+                android:id="@+id/actionDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_brush"
+                    app:tint="@color/icon_orange"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Draw/Erase"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Signature -->
+            <LinearLayout
+                android:id="@+id/actionSignature"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_signature"
+                    app:tint="@color/icon_purple"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Signature"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Watermark -->
+            <LinearLayout
+                android:id="@+id/actionWatermark"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_watermark"
+                    app:tint="@color/icon_amber"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Watermark"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Text / Notes -->
+            <LinearLayout
+                android:id="@+id/actionText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_text"
+                    app:tint="@color/icon_blue"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text"
+                    android:textSize="10sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

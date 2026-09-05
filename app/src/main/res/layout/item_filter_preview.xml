@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFilterThumb"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@android:color/transparent"
+        app:cardBackgroundColor="@color/surface_variant">
+
+        <ImageView
+            android:id="@+id/ivFilterThumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvFilterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="@color/text_secondary"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="4dp"
+        android:singleLine="true"/>
+
+</LinearLayout>

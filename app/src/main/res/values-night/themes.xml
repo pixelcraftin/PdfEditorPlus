@@ -14,7 +14,7 @@
         <item name="android:statusBarColor">@color/background</item>
         <item name="android:navigationBarColor">@color/background</item>
         <item name="android:windowLightStatusBar">false</item>
-        <!-- Splash screen (Android 12+) -->
+        <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
     </style>

@@ -3,8 +3,8 @@
     <!-- App -->
     <string name="app_name">PdfEditor+</string>
     <string name="app_tagline">TRUE PDF ESSENTIALS</string>
-    <string name="app_version">V1.0.1</string>
-    <string name="app_version_full">PDFEDITOR+ V1.0.1</string>
+    <string name="app_version">V1.0.6</string>
+    <string name="app_version_full">PDFEDITOR+ V1.0.6</string>
 
     <!-- Bottom Navigation -->
     <string name="nav_home">HOME</string>
@@ -49,6 +49,8 @@
     <string name="tool_protect_pdf">Protect PDF</string>
     <string name="tool_unlock_pdf">Unlock PDF</string>
     <string name="tool_metadata">Metadata</string>
+    <string name="tool_document_editor">Document Editor</string>
+    <string name="desc_document_editor">Scan &amp; edit multi-image documents with filters, drawings, signature &amp; export to A4 PDF.</string>
     <string name="tool_extract">Extract</string>
     <string name="tool_compress">Compress</string>
     <string name="tool_protect">Protect</string>
@@ -230,7 +232,7 @@
     <string name="angle_neg_90">-90° (Vertical)</string>
 
     <!-- Protect / Unlock -->
-    <string name="set_password">Set Password</string>
+    <string name="set_password">Set Passwor (Remember the password)</string>
     <string name="enter_password">Enter Password</string>
     <string name="passwords_mismatch">Passwords do not match</string>
     <string name="wrong_password">Wrong password</string>
